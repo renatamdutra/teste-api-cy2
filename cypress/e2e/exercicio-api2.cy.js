@@ -7,7 +7,7 @@ describe('Testes da Funcionalidade Usuários', () => {
          cy.token('renata3@qa.com.br', 'teste').then (tkn => {token = tkn})
      });
 
-    it('Deve validar contrato de usuários', () => {
+    it.only('Deve validar contrato de usuários', () => {
           cy.request('usuarios').then(response => {
                return contrato.validateAsync(response.body)
           })
@@ -25,7 +25,7 @@ describe('Testes da Funcionalidade Usuários', () => {
            })
     });
 
-    it('Deve cadastrar um usuário com sucesso', () => {
+    it.only('Deve cadastrar um usuário com sucesso', () => {
      let usuario = `Usuario EBAC ${Math.floor (Math.random () * 10000000)}`
      let email = `teste_email${Math.floor (Math.random () * 10000000)}@qa.com.br`
 
